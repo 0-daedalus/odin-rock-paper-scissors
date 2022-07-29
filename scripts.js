@@ -59,6 +59,7 @@ function game(){
         outcome = playRound(playerSelection, getComputerChoice());
         if(outcome === "Enter a valid choice!"){
             console.log("Enter a real value!");
+            i--;
             continue;
         }
         else if(outcome === 1){
