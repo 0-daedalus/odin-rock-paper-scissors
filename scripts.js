@@ -27,8 +27,14 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     if(playerSelection === computerSelection){
         console.log("Draw! Try again!");
+        return "Draw! Try again!";
     }
-    else if(playerSelection === "Rock" && computerSelection === "Scissors"){
-        console.log("You won! Good job!")
+    else if((playerSelection.toLowerCase() === "rock" && computerSelection === "Scissors") || (playerSelection.toLowerCase() === "scissors" && computerSelection === "Paper") || (playerSelection.toLowerCase() === "paper" && computerSelection === "Rock")){
+        console.log(`You won! ${playerSelection} beats ${computerSelection}! Good job!`);
+        return `You won! ${playerSelection} beats ${computerSelection}! Good job!`;
+    }
+    else{
+        console.log(`You lost! ${computerSelection} beats ${playerSelection}! Try again!`);
+        return `You lost! ${computerSelection} beats ${playerSelection}! Try again!`;
     }
 }
