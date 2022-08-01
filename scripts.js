@@ -55,11 +55,41 @@ function playRound(playerSelection, computerSelection){
 //Make 3 event listeners
 //Assign correct input to each one
 //Call playRound() with the correct arguments on click
+let playerScore = 0;
+let computerScore = 0;
 
 const rockBtn = document.querySelector(".rock-button");
 const paperBtn = document.querySelector(".paper-button");
 const scissorsBtn = document.querySelector(".scissors-button");
 
-rockBtn.addEventListener('click', () => playRound('rock', getComputerChoice()));
-paperBtn.addEventListener('click', () => playRound('paper', getComputerChoice()));
-scissorsBtn.addEventListener('click', () => playRound('scissors', getComputerChoice()));
+function game(){
+    const hdr = document.querySelector('h1');
+    let outcome = playRound('rock', getComputerChoice());
+    if(outcome === 1) ++playerScore;
+    else if(outcome === -1) ++computerScore;
+    if(playerScore >= 5){
+        rockBtn.setAttribute('disabled', true);
+        paperBtn.setAttribute('disabled', true);
+        scissorsBtn.setAttribute('disabled', true);
+        hdr.textContent = "You win! Good job!"
+    }
+    if(computerScore >= 5){
+        rockBtn.setAttribute('disabled', true);
+        paperBtn.setAttribute('disabled', true);
+        scissorsBtn.setAttribute('disabled', true);
+        hdr.textContent = "You lost! Try again!"
+    }
+}
+
+
+rockBtn.addEventListener('click', () => {
+    game();
+});
+paperBtn.addEventListener('click', () => {
+    game();
+});
+scissorsBtn.addEventListener('click', () => {
+    game();
+});
+
+
