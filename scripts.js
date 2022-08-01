@@ -27,7 +27,7 @@ function getComputerChoice(){
 //Return an outcome of the round
 function playRound(playerSelection, computerSelection){
 
-    const hdr = document.querySelector('h1');
+    const hdr = document.querySelector('.scoreboard');
     const results = document.querySelector('.results');
 
     if(playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() != "paper" && playerSelection.toLowerCase() != "scissors") return "Enter a valid choice!";
@@ -62,10 +62,18 @@ const paperBtn = document.querySelector(".paper-button");
 const scissorsBtn = document.querySelector(".scissors-button");
 
 function game(choice){
-    const hdr = document.querySelector('h1');
+    const hdr = document.querySelector('.scoreboard');
     let outcome = playRound(choice, getComputerChoice());
-    if(outcome === 1) ++playerScore;
-    else if(outcome === -1) ++computerScore;
+    const player = document.querySelector('.human-score');
+    const computer = document.querySelector('.computer-score');
+    if(outcome === 1) {
+        ++playerScore;
+        player.textContent = playerScore;
+    }
+    else if(outcome === -1){
+        ++computerScore;
+        computer.textContent = computerScore;
+    }
     if(playerScore >= 5){
         rockBtn.setAttribute('disabled', true);
         paperBtn.setAttribute('disabled', true);
