@@ -49,34 +49,4 @@ function playRound(playerSelection, computerSelection){
 //Use a for loop to call playRound 5 times
 //Update score based on the outcome of the round
 //Report a winner or loser at the end
-function game(){
-    let playerScore = 0;
-    let computerScore = 0;
-    let outcome;
-    let playerSelection;
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Make your choice!");
-        outcome = playRound(playerSelection, getComputerChoice());
-        if(outcome === "Enter a valid choice!"){
-            console.log("Enter a real value!");
-            i--;
-            continue;
-        }
-        else if(outcome === 1){
-            playerScore++;
-        }
-        else if(outcome === -1){
-            computerScore++;
-        }
-        console.log(`Current score is: player: ${playerScore}, computer: ${computerScore}`);
-    }
-    if(playerScore > computerScore){
-        console.log("You won! Congratulations!");
-    }
-    else if(computerScore > playerScore){
-        console.log("You lost! Better luck next time!");
-    }
-    else{
-        console.log("Draw! Try again!");
-    }
-}
+
