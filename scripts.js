@@ -26,27 +26,40 @@ function getComputerChoice(){
 //Compare the selections
 //Return an outcome of the round
 function playRound(playerSelection, computerSelection){
+
+    const hdr = document.querySelector('h1');
+    hdr.style.color = "red";
+    const results = document.querySelector('.results');
+
     if(playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() != "paper" && playerSelection.toLowerCase() != "scissors") return "Enter a valid choice!";
 
     if(playerSelection.toLowerCase() === computerSelection.toLowerCase()){
-        
-        console.log("Draw! Try again!");
+
+        hdr.textContent = "Draw! Try again!";
         return 0;
+
     }
     else if((playerSelection.toLowerCase() === "rock" && computerSelection === "Scissors") || (playerSelection.toLowerCase() === "scissors" && computerSelection === "Paper") || (playerSelection.toLowerCase() === "paper" && computerSelection === "Rock")){
         
-        console.log(`You won! ${playerSelection} beats ${computerSelection}! Good job!`);
+        hdr.textContent = `You won! ${playerSelection} beats ${computerSelection}! Good job!`;
         return 1;
     }
     else{
         
-        console.log(`You lost! ${computerSelection} beats ${playerSelection}! Try again!`);
+        hdr.textContent = `You lost! ${computerSelection} beats ${playerSelection}! Try again!`;
         return -1;
     }
 }
 
-//Make 2 variables to store scores
-//Use a for loop to call playRound 5 times
-//Update score based on the outcome of the round
-//Report a winner or loser at the end
 
+//Make 3 event listeners
+//Assign correct input to each one
+//Call playRound() with the correct arguments on click
+
+const rockBtn = document.querySelector(".rock-button");
+const paperBtn = document.querySelector(".paper-button");
+const scissorsBtn = document.querySelector(".scissors-button");
+
+rockBtn.addEventListener('click', () => playRound('rock', getComputerChoice()));
+paperBtn.addEventListener('click', () => playRound('paper', getComputerChoice()));
+scissorsBtn.addEventListener('click', () => playRound('scissors', getComputerChoice()));
