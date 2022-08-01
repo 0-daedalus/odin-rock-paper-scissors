@@ -27,7 +27,7 @@ function getComputerChoice(){
 //Return an outcome of the round
 function playRound(playerSelection, computerSelection){
 
-    const hdr = document.querySelector('h1');
+    const hdr = document.querySelector('.scoreboard');
     const results = document.querySelector('.results');
 
     if(playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() != "paper" && playerSelection.toLowerCase() != "scissors") return "Enter a valid choice!";
