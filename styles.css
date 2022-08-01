@@ -1,3 +1,7 @@
+*{
+    font-family: "comic sans ms";
+}
+
 body{
     width: 100vw;
     height: 100vh;
@@ -7,10 +11,26 @@ body{
 }
 
 .results{
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.text{
+    width: 100%;
+    flex-grow: 1;
+    background-color: rgba(0, 0, 255, 0.384); 
+    margin-bottom: 10px;
+    border: 2px solid rgba(165, 42, 42, 0.74);
+    padding-left: 15px;
+    color: white;
+    text-shadow: 5px 5px grey;
+}
+
+.buttons{
+    flex: 1;
 }
 
 .button{
@@ -21,4 +41,9 @@ body{
     color: white;
     background-color: brown;
     font-size: 16px;
+}
+
+.button:disabled{
+    background-color: rgba(165, 42, 42, 0.356);
+    
 }

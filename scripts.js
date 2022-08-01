@@ -28,7 +28,6 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
 
     const hdr = document.querySelector('h1');
-    hdr.style.color = "red";
     const results = document.querySelector('.results');
 
     if(playerSelection.toLowerCase() != "rock" && playerSelection.toLowerCase() != "paper" && playerSelection.toLowerCase() != "scissors") return "Enter a valid choice!";
@@ -62,9 +61,9 @@ const rockBtn = document.querySelector(".rock-button");
 const paperBtn = document.querySelector(".paper-button");
 const scissorsBtn = document.querySelector(".scissors-button");
 
-function game(){
+function game(choice){
     const hdr = document.querySelector('h1');
-    let outcome = playRound('rock', getComputerChoice());
+    let outcome = playRound(choice, getComputerChoice());
     if(outcome === 1) ++playerScore;
     else if(outcome === -1) ++computerScore;
     if(playerScore >= 5){
@@ -83,13 +82,13 @@ function game(){
 
 
 rockBtn.addEventListener('click', () => {
-    game();
+    game('rock');
 });
 paperBtn.addEventListener('click', () => {
-    game();
+    game('paper');
 });
 scissorsBtn.addEventListener('click', () => {
-    game();
+    game('scissors');
 });
 
 
