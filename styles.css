@@ -34,16 +34,44 @@ body{
 }
 
 .button{
-    width: 100px;
-    height: 40px;
+    width: 200px;
+    height: 200px;
     margin: 10px;
     box-sizing: border-box;
-    color: white;
-    background-color: brown;
     font-size: 16px;
+    max-width: 200px;
+    max-height: 200px;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    transition: all 1s;
 }
 
 .button:disabled{
     background-color: rgba(165, 42, 42, 0.356);
     
+}
+
+.paper-button{
+    background-image: url(./images/paper.jpg);
+}
+
+.rock-button{
+    background-image: url(./images/rock.jpeg);
+}
+
+.scissors-button{
+    background-image: url(./images/scissors.png);
+}
+
+.rock-button:disabled{
+    background-image: url(./images/rock-after.jpg);
+
+}
+
+.paper-button:disabled{
+    background-image: url(./images/paper-after.png);
+}
+
+.scissors-button:disabled{
+    background-image: url(./images/scissors-after.webp);
 }
