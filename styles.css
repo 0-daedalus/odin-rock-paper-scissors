@@ -79,6 +79,7 @@ body{
     color: white;
     background-color: brown;
     font-size: 16px;
+    transition: all 0.7s;
 }
 
 .button:disabled{
